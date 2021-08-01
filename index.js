@@ -111,6 +111,8 @@ function drawResult() {
     teamNumber++;
     document.body.innerHTML += "]<br>";
   }
+  document.body.innerHTML += `남은 인원 :`;
+
   for (let i of memberC)
-    document.body.innerHTML += `남은 인원 : ${memberC[0]}(${memberC[1]})`;
+    document.body.innerHTML += `${memberC[0]}(${memberC[1]}),`;
 }
