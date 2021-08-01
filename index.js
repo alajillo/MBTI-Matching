@@ -105,11 +105,14 @@ function buildTeam() {
       team[j].push(tempMember);
     }
   }
-  let teeamIndex = team.length - 1;
+  let teamIndex = team.length;
   while (memberC.length !== 0) {
-    let tempMember = memberC.pop();
-    team[teamindedx].push(tempMember);
-    if (team[teamIndex].length >= memberMax) teamIndex++;
+    if (memberC.length >= memberMax) {
+      team[teamIndex] = memberC.splice(0, memberMax);
+    } else {
+      team[teamIndex] = memberC.splice(0, memberC.length - 1);
+    }
+    teamIndex++;
   }
   drawResult();
 }
