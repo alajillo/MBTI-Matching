@@ -1,0 +1,46 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+table {
+  width: 350px;
+  margin: 0 auto;
+  border: 2px solid #3b5998;
+}
+
+table input {
+  border: none;
+}
+
+table td {
+  border: 1px solid #3b5998;
+}
+
+#display-none {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #3b5998;
+  display: flex;
+  border-radius: 3%;
+}
+
+#display-none * {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#display-none input {
+  background-color: white;
+}
+
+.table-input {
+  width: 350px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.table-input input {
+  box-sizing: border-box;
+  width: 100%;
+}
