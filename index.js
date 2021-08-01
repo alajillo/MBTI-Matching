@@ -104,9 +104,12 @@ function buildTeam() {
 
 function drawResult() {
   document.body.innerHTML = ``;
-
+  let teamNumber = 1;
   for (let i of team) {
-    document.body.innerHTML += `이름 :${i[0]}, Mbti :${i[1]}`;
-    document.body.innerHTML += "<br>";
+    document.body.innerHTML += `${teamNumber}번팀 [`;
+    for (let j of i) document.body.innerHTML += `${j[0]}(${j[1]}),  `;
+    teamNumber++;
+    document.body.innerHTML += "]<br>";
   }
+  document.body.innerHTML += `남은 인원 : ${...memberC}`;
 }
