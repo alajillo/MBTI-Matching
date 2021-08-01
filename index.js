@@ -99,6 +99,18 @@ function buildTeam() {
       team[j].push(tempMember);
     }
   }
+  for (let j = 0; j < team.length; j++) {
+    while (team[j].length < memberMax && memberC.length !== 0) {
+      let tempMember = memberC.pop();
+      team[j].push(tempMember);
+    }
+  }
+  let teeamIndex = team.length - 1;
+  while (memberC.length !== 0) {
+    let tempMember = memberC.pop();
+    team[teamindedx].push(tempMember);
+    if (team[teamIndex].length >= memberMax) teamIndex++;
+  }
   drawResult();
 }
 
