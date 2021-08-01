@@ -19,15 +19,17 @@ table td {
 
 #display-none {
   width: 50%;
-  margin: 0 auto;
+  margin: 50px auto;
   border: 1px solid #3b5998;
   display: flex;
   border-radius: 3%;
+  flex-direction: column;
 }
 
 #display-none * {
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
+  font-size: 3rem;
 }
 
 #display-none input {
@@ -35,12 +37,39 @@ table td {
 }
 
 .table-input {
-  width: 350px;
+  width: 824px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .table-input input {
+  font-size: 2rem;
+  text-align: center;
   box-sizing: border-box;
   width: 100%;
+}
+
+.mbti,
+.name {
+  font-size: 2rem;
+}
+
+th {
+  font-size: 3rem;
+}
+
+.flex-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.flex-container > ul {
+  height: fit-content;
+  border: 2px solid blue;
+  font-size: 3rem;
 }

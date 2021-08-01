@@ -103,15 +103,21 @@ function buildTeam() {
 }
 
 function drawResult() {
-  document.body.innerHTML = ``;
-  let teamNumber = 1;
-  for (let i of team) {
-    document.body.innerHTML += `${teamNumber}번팀 [`;
-    for (let j of i) document.body.innerHTML += `${j[0]}(${j[1]}),  `;
-    teamNumber++;
-    document.body.innerHTML += "]<br>";
+  let teamFinal = team.filter((v) => {
+    return v[0] !== null && v[0] !== undefined && v[0] !== "";
+  });
+  console.log(teamFinal);
+  document.body.innerHTML = "";
+  let container = document.createElement("div");
+  container.classList.add("flex-container");
+  for (let i of teamFinal) {
+    let box = document.createElement("ul");
+    for (let j of i) {
+      let memberInBox = document.createElement("li");
+      box.append(memberInBox);
+      memberInBox.innerText = `${j[0]}(${j[1]})`;
+    }
+    container.append(box);
   }
-  document.body.innerHTML += `아무곳에나 넣어도 최악의 조합이 아닌 사람들 :`;
-
-  for (let i of memberC) document.body.innerHTML += `${i[0]}(${i[1]}),`;
+  document.body.append(container);
 }
