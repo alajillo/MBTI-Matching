@@ -111,8 +111,7 @@ function drawResult() {
     teamNumber++;
     document.body.innerHTML += "]<br>";
   }
-  document.body.innerHTML += `남은 인원 :`;
+  document.body.innerHTML += `아무곳에나 넣어도 최악의 조합이 아닌 사람들 :`;
 
-  for (let i of memberC)
-    document.body.innerHTML += `${memberC[0]}(${memberC[1]}),`;
+  for (let i of memberC) document.body.innerHTML += `${i[0]}(${i[1]}),`;
 }
