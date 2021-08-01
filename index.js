@@ -2,10 +2,10 @@ let mbtiA = ["INFP", "ENFP", "INFJ", "ENFJ"];
 let mbtiB = ["ISFP", "ESFP", "ISTP", "ESTP", "ISFJ", "ESFJ", "ISTJ", "ESTJ"];
 let member = [];
 let button = document.getElementById("make-table");
-
+let totalMember;
 function tableClick() {
   console.log("test");
-  let totalMember = document.getElementById("total-member").value;
+  totalMember = parseInt(document.getElementById("total-member").value);
   makeTable(totalMember);
 }
 
@@ -23,8 +23,8 @@ function makeTable(totalMember) {
     console.log(i);
     document.getElementById("container").innerHTML += `
     <tr>
-    <td><input class='name-${i}' type="text" placeholder="이름"></td>
-    <td ><input class='mbti-${i}' type="text" placeholder="MBTI"></td>
+    <td><input class='name' type="text" placeholder="이름"></td>
+    <td ><input class='mbti' type="text" placeholder="MBTI"></td>
 </tr>`;
   }
   document.body.innerHTML += `
@@ -40,7 +40,15 @@ placeholder="팀구성 최소인원을 입력주세요."
   id="build-team"
   type="button"
   value="최악의 조합 피하기!"
+  onclick="inputTeam()"
 />`;
 }
 
-function buildTeam() {}
+function inputTeam() {
+  let name = document.getElementsByClassName("name");
+  let mbti = document.getElementsByClassName("mbti");
+  for (let i = 0; i < name.length; i++) {
+    member.push([name[i].value, mbti[i].value.toUpperCase()]);
+  }
+  console.log(member);
+}
