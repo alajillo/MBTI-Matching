@@ -94,12 +94,14 @@ function buildTeam() {
   team.push(memberB);
 
   for (let j = 0; j < team.length; j++) {
+    //팀을 순회하면서 c유형 인원들을 채워서 최대인원 만들기
     while (team[j].length < memberMin && memberC.length !== 0) {
       let tempMember = memberC.pop();
       team[j].push(tempMember);
     }
   }
   for (let j = 0; j < team.length; j++) {
+    //팀을 순회하면서 c유형 인원들을 채워서 최소인원 만들기
     while (team[j].length < memberMax && memberC.length !== 0) {
       let tempMember = memberC.pop();
       team[j].push(tempMember);
@@ -107,6 +109,7 @@ function buildTeam() {
   }
   let teamIndex = team.length;
   while (memberC.length !== 0) {
+    //팀을 순회하고 남은 c유형 인원들로 팀 만들기
     if (memberC.length >= memberMax) {
       team[teamIndex] = memberC.splice(0, memberMax);
     } else {
@@ -118,6 +121,7 @@ function buildTeam() {
 }
 
 function drawResult() {
+  // 최종화면 단에 팀별로 그룹지어서 뿌려주기
   let teamFinal = team.filter((v) => {
     return v[0] !== null && v[0] !== undefined && v[0] !== "";
   });
